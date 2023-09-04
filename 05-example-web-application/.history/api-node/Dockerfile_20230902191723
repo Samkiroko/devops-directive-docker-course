@@ -1,0 +1,13 @@
+FROM node:20-alpine
+
+# RUN apt update
+
+# RUN apt install nodejs -y
+
+RUN RUN apk update && apk add nodejs npm
+
+COPY . .
+
+RUN npm install
+
+CMD ["npm", "run", "dev"]
